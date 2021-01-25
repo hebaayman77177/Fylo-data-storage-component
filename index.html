@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Yanone+Kaffeesatz:wght@200;500&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .storage {
+      height: 100vh;
+      background-image: url("images/bg-mobile.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fcffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .storage__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5vw;
+      position: relative;
+    }
+
+    .storage__header,
+    .storage__content {
+      background-color: #1e2c69;
+      width: 250px;
+      padding: 50px;
+      border-radius: 25px;
+    }
+
+    .storage__header {
+      border-top-right-radius: 50%;
+      margin-bottom: 25px;
+    }
+
+    .storage__logo {
+      margin-bottom: 25px;
+    }
+
+    .storage__controls {
+      display: flex;
+    }
+
+    .storage__controls div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px;
+      height: 35px;
+      width: 35px;
+      border-radius: 11px;
+      margin-right: 20px;
+      background-color: #10132f;
+    }
+
+    .storage__content {
+      color: #8e94c2;
+    }
+
+    .storage__content span,
+    .storage__content b {
+      color: #b6b9e8;
+    }
+
+    .progress_bar,
+    .progress_bar__value {
+      height: 15px;
+      border-radius: 15px;
+
+    }
+
+    .progress_bar {
+      background-color: #141e49;
+      border: 2px solid #141e49;
+      margin-bottom: 5px;
+    }
+
+    .progress_bar__value {
+      width: 80%;
+      background-image: linear-gradient(to right, #f7d5e0, #f52067);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .progress_bar__circle {
+      background-color: white;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-left: auto;
+    }
+
+    .storage__min_max_sizes {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 7px;
+      font-size: 13px;
+    }
+
+    .storage__free {
+      background-color: #fefefe;
+      color: #abaaad;
+      display: inline-block;
+      padding: 15px;
+      font-size: 14px;
+      border-radius: 9px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 2px;
+      left: 144px;
+    }
+
+    .yanonefont {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+    }
+
+    .storage__free b {
+      color: #0c0f16;
+      font-size: 25px;
+      /* font-weight: 5000; */
+    }
+
+    .triangle-topright {
+      width: 0;
+      height: 0;
+      border-top: 25px solid #fefefe;
+      border-left: 25px solid transparent;
+      position: absolute;
+      right: 5px;
+      bottom: -18px;
+      display: none;
+
+    }
+
+    @media all and (min-width: 800px) {
+      .storage {
+        background-image: url("images/bg-desktop.png");
+      }
+
+      .storage__container {
+        flex-direction: row;
+      }
+
+      .storage__header {
+        margin-right: 15px;
+      }
+
+      .storage__content {
+        width: 350px
+      }
+
+
+
+      .storage__free {
+        top: 43px;
+        right: 97px;
+        left: unset;
+        bottom: unset;
+      }
+      .triangle-topright{
+        display: block;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="storage">
+    <div class="storage__container">
+      <div class="storage__header">
+        <div class="storage__logo">
+          <img src="images/logo.svg" />
+        </div>
+        <div class="storage__controls">
+          <div><img src="images/icon-document.svg" /></div>
+          <div><img src="images/icon-folder.svg" /></div>
+          <div><img src="images/icon-upload.svg" /></div>
+        </div>
+      </div>
+      <div class="storage__content">
+        <p>You've used <b class="yanonefont">815 GB</b> of your storage</p>
+        <div class="progress_bar">
+          <div class="progress_bar__value">
+            <div class="progress_bar__circle"></div>
+          </div>
+        </div>
+        <div class="storage__min_max_sizes">
+          <span>0GB</span>
+          <span>1000 GB</span>
+        </div>
+        <div class="storage__free">
+          <b class="yanonefont">185</b> GB LEFT
+          <div class="triangle-topright"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
